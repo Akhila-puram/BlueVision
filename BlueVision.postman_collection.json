@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "1f3f62bd-8353-44be-ad67-afe9be7bc269",
+		"name": "BlueVision",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21031708",
+		"_collection_link": "https://camunda-7983.postman.co/workspace/Camunda-Workspace~b1b020b8-74a2-415b-8cd8-c856f5cdc17b/collection/21031708-1f3f62bd-8353-44be-ad67-afe9be7bc269?action=share&source=collection_link&creator=21031708"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"TaskListToken\",pm.response.json().token)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhc2V5YXVzZXIiLCJpYXQiOjE3MTY4NzQ3MjgsImV4cCI6MTcxNjg3NjUyOH0.Ft_Mm56P2bDfkrjVhxUHhRuQ90JmLdEhUUVXI9aOwh8\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"aaseyauser\",\"password\":\"Welcome@01\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.bluevision.ai/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bluevision",
+						"ai"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Distortion image upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhc2V5YXVzZXIiLCJpYXQiOjE3MTc0MTMyNTYsImV4cCI6MTcxNzQxNTA1Nn0.O1xKEdjub26E6gZRmNnUkYx1wutx3JzNzs6hb7Lq_sA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Akhila.Puram/Downloads/test.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.bluevision.ai/document/upload",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bluevision",
+						"ai"
+					],
+					"path": [
+						"document",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Distortion image upload Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhc2V5YXVzZXIiLCJpYXQiOjE3MTY5OTMyOTEsImV4cCI6MTcxNjk5NTA5MX0.YTKQZNj04xL1rTH5h18W5Lop08ZKpm1jGl3N9_OWUJI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Akhila.Puram/Downloads/nodistorion.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.bluevision.ai/document/upload",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bluevision",
+						"ai"
+					],
+					"path": [
+						"document",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Copy 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhc2V5YXVzZXIiLCJpYXQiOjE3MTc0MTY1MTIsImV4cCI6MTcxNzQxODMxMn0.rM8MiO9MQYraXcx2YL9NX7T6I9jN5i5lsIcFlOsyDS8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.bluevision.ai/document/get_image_result/665db26144c3c707c391c80b",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bluevision",
+						"ai"
+					],
+					"path": [
+						"document",
+						"get_image_result",
+						"665db26144c3c707c391c80b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEntityDeatils by InspectorManager",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/createdBy/inspectormanager@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"createdBy",
+						"inspectormanager@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "TaskListToken",
+			"value": ""
+		}
+	]
+}
